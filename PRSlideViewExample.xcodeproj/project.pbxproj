@@ -11,6 +11,7 @@
 		9342D2D922DC678C00B8BD2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342D2D822DC678C00B8BD2B /* ViewController.swift */; };
 		9342D2DE22DC678E00B8BD2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9342D2DD22DC678E00B8BD2B /* Assets.xcassets */; };
 		9342D2E122DC678E00B8BD2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9342D2DF22DC678E00B8BD2B /* LaunchScreen.storyboard */; };
+		9358145222DC944A00345C02 /* PRSlideView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9358145122DC944A00345C02 /* PRSlideView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		9342D2DD22DC678E00B8BD2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9342D2E022DC678E00B8BD2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9342D2E222DC678E00B8BD2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9358145122DC944A00345C02 /* PRSlideView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PRSlideView.framework; path = Carthage/Build/iOS/PRSlideView.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9358145222DC944A00345C02 /* PRSlideView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 				9342D2E922DC67A700B8BD2B /* Assets */,
 				9342D2E822DC679F00B8BD2B /* Supporting Files */,
 				9342D2D422DC678C00B8BD2B /* Products */,
+				9358145022DC944A00345C02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +81,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		9358145022DC944A00345C02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9358145122DC944A00345C02 /* PRSlideView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +99,7 @@
 				9342D2CF22DC678C00B8BD2B /* Sources */,
 				9342D2D022DC678C00B8BD2B /* Frameworks */,
 				9342D2D122DC678C00B8BD2B /* Resources */,
+				9358145322DC945400345C02 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +154,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9358145322DC945400345C02 /* Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PRSlideView.framework",
+			);
+			name = "Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PRSlideView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9342D2CF22DC678C00B8BD2B /* Sources */ = {
@@ -287,6 +323,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,6 +345,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
