@@ -33,8 +33,32 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private lazy var startButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .play,
+                                     target: self,
+                                     action: #selector(autoScrollingButtonClicked(_:)))
+        return button
+    }()
+    private lazy var stopButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .pause,
+                                     target: self,
+                                     action: #selector(autoScrollingButtonClicked(_:)))
+        return button
+    }()
+    
+    @objc private func autoScrollingButtonClicked(_ sender: UIBarButtonItem) {
+        if sender == startButtonItem {
+            slideView.startAutoScrolling()
+            navigationItem.rightBarButtonItem = stopButtonItem
+        } else if sender == stopButtonItem {
+            slideView.stopAutoScrolling()
+            navigationItem.rightBarButtonItem = startButtonItem
+        }
+    }
+    
     private func configure() {
         self.title = "Wiredcraft"
+        navigationItem.rightBarButtonItem = startButtonItem
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
